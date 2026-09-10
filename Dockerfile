@@ -1,7 +1,7 @@
-FROM gcc:14 AS builder
+FROM debian:bookworm AS builder
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends cmake && \
+    apt-get install -y --no-install-recommends g++ cmake make && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
